@@ -1,162 +1,140 @@
-# 二手交易平台
+# 校园二手交易平台
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/yourusername/second-hand-trading)
 ![GitHub](https://img.shields.io/github/license/yourusername/second-hand-trading)
 ![GitHub stars](https://img.shields.io/github/stars/yourusername/second-hand-trading?style=social)
 
-一个基于Java Web技术栈的校园二手交易平台，提供商品发布、浏览、收藏、留言等功能，帮助校园用户便捷地进行二手物品交易。
+> 基于Java Web的校园二手交易解决方案，为大学生提供安全便捷的二手物品交易环境。
 
-## 项目概览
+## ✨ 功能特点
 
-这是一个专为校园环境设计的二手交易平台，旨在为大学生提供一个安全、便捷的二手物品交易环境。系统支持用户注册登录、商品发布与管理、商品搜索、收藏管理以及用户间留言交流等功能。
+- 💼 **用户系统** - 注册登录、权限分级(普通用户/管理员)
+- 🛍️ **商品管理** - 发布、修改、删除、查询商品
+- 💖 **收藏功能** - 一键收藏感兴趣商品，快速访问
+- 💬 **留言互动** - 商品留言咨询，促进用户交流
+- 🔍 **高级搜索** - 多维度商品搜索与筛选
+- 📱 **响应式设计** - 适配多种设备，良好的移动端体验
 
-### 功能特点
+## 📸 界面展示
 
-- **用户管理**：注册、登录、权限分级（普通用户/管理员）
-- **商品操作**：发布、修改、删除、查询商品
-- **收藏系统**：收藏感兴趣的商品，快速访问
-- **留言功能**：对商品进行留言咨询，促进用户交流
-- **搜索筛选**：多维度商品搜索与筛选
-- **响应式设计**：适配不同设备屏幕，提供良好的移动端体验
-
-### 项目截图
-
-#### 登录界面
+### 登录界面
 ![登录界面](./figures/login.png)
 
-#### 主界面
+### 主界面
 ![主界面](./figures/main.png)
 
-#### 我的商品
+### 我的商品
 ![我的商品](./figures/my_items.png)
 
-#### 商品详情
+### 商品详情
 ![商品详情](./figures/item_detail.png)
 
-## 系统运行环境
+## 🚀 快速开始
 
-### 基本配置要求
-- 操作系统：Windows 7/10/11, macOS, Linux
-- 浏览器：Chrome, Firefox, Safari, Edge (推荐使用最新版本)
-- 网络连接：稳定的网络环境、
-### 服务器环境
-- 服务器容器：Apache Tomcat v9.0
-- 数据库：阿里云 RDS（MySQL 5.7+）
-- 脚本语言：MySQL 脚本语言（用于数据库操作）
+### 环境要求
 
-## 快速开始
+| 组件 | 要求 |
+|------|------|
+| JDK | 8+ |
+| Tomcat | 8+ |
+| MySQL | 5.7+ |
+| 操作系统 | Windows/macOS/Linux |
+| 浏览器 | Chrome/Firefox/Safari/Edge (最新版) |
 
-### 环境准备
-1. 安装JDK 8或更高版本
-2. 安装Tomcat 8或更高版本
-3. 安装MySQL 5.7或更高版本
-4. 安装IDE（推荐IntelliJ IDEA或Eclipse）
+### 部署步骤
 
-### 安装步骤
-1. 克隆仓库到本地
+1. **克隆仓库**
    ```bash
    git clone https://github.com/yourusername/second-hand-trading.git
    ```
 
-2. 通过sqlBean重新连接数据库
-   - 修改数据库连接参数（URL、用户名、密码）
-   - 配置所需数据表
+2. **配置数据库**
+   - 通过sqlBean更新数据库连接参数(URL、用户名、密码)
+   - 运行SQL脚本创建所需数据表
 
-5. 部署到Tomcat
-   - 配置Tomcat服务器
-   - 部署项目
-   - 启动Tomcat
+3. **部署项目**
+   - 配置并启动Tomcat服务器
+   - 部署项目至Tomcat
 
-6. 访问应用
-   - 本机访问: http://localhost:8080/UPC_improve/login.jsp
-   - 其他访问: http://发布机器的ip地址:8080/UPC_improve/login.jsp
+4. **访问系统**
+   - 本地访问: `http://localhost:8080/UPC_improve/login.jsp`
+   - 远程访问: `http://[服务器IP]:8080/UPC_improve/login.jsp`
 
 ### 预设账户
-- 管理员：username: 徐银, password: 123456
-- 测试用户：username: lujy, password: 123456
 
-## 项目结构
+| 角色 | 用户名 | 密码 |
+|------|------|------|
+| 管理员 | 徐银 | 123456 |
+| 测试用户 | lujy | 123456 |
+
+## 📁 项目结构
 
 ```
 UPC_improve/
-├── .settings/
 ├── src/
 │   └── MyBean/
-│       ├── conClass.java/   # 中文转换
-│       └── sqlBean.java/    # 数据库连接
+│       ├── conClass.java   # 中文转换
+│       └── sqlBean.java    # 数据库连接
+│
 ├── WebRoot/
-│   ├── images/
-│   │   ├── 自由女神.png/     # 背景
-│   │   └── logo.png/        # logo
-│   ├── WEB-INF/   
-│   ├── login.jsp/           # 登录界面
-│   ├── main.jsp/            # 主界面
-│   ├── itemdetail.jsp/      # 商品详情界面
-│   ├── infolr.jsp/          # 商品录入界面
-│   ├── infocx.jsp/          # 商品查询界面
-│   ├── mycollection.jsp/    # 我的收藏界面
-│   ├── myitems.jsp/         # 我的商品界面
-│   ├── error.jsp/           # 错误界面
-│   └── exit.jsp/            # 退出界面
-└── 网址说明文档.txt/                    # 项目文档
+│   ├── images/             # 图片资源
+│   ├── WEB-INF/            # Web配置  
+│   ├── login.jsp           # 登录界面
+│   ├── main.jsp            # 主界面
+│   ├── itemdetail.jsp      # 商品详情
+│   ├── infolr.jsp          # 商品录入
+│   ├── infocx.jsp          # 商品查询
+│   ├── mycollection.jsp    # 我的收藏
+│   ├── myitems.jsp         # 我的商品
+│   ├── error.jsp           # 错误页面
+│   └── exit.jsp            # 退出页面
 ```
 
-## 数据库设计
+## 💾 数据模型
 
-### 主要表结构
+| 表名 | 描述 | 主要字段 |
+|------|------|---------|
+| Users | 用户信息 | 用户名、密码、联系方式、邮箱、用户类型 |
+| Items | 商品信息 | 名称、描述、价格、成色、状态、图片路径 |
+| Messages | 留言信息 | 商品ID、发送者ID、内容、时间 |
+| Collections | 收藏记录 | 用户ID、商品ID、收藏时间 |
 
-- **Users表**：用户信息（用户名、密码、联系方式、邮箱、用户类型）
-- **Items表**：商品信息（名称、描述、价格、成色、状态、图片路径）
-- **Messages表**：留言信息（商品ID、发送者ID、内容、时间）
-- **Collections表**：收藏记录（用户ID、商品ID、收藏时间）
+## 💡 功能亮点
 
-## 功能亮点
+- **用户体验** - 直观界面、表单验证、即时反馈
+- **安全机制** - 密码加密、输入验证、权限控制
+- **实用功能** - 多条件搜索、状态管理、互动系统
 
-### 用户体验优化
-- 响应式设计，适配各种设备
-- 界面美观，操作直观
-- 表单验证确保数据有效性
+## 🔮 未来计划
 
-### 安全性考虑
-- 密码加密存储
-- 输入验证防止SQL注入
-- 权限控制保障数据安全
+- [ ] 集成在线支付功能
+- [ ] 用户评价与信誉系统
+- [ ] 移动端App开发
+- [ ] 消息推送通知
+- [ ] 智能商品推荐算法
 
-### 实用功能
-- 多条件组合搜索
-- 商品状态管理（在售/已售）
-- 留言互动功能
+## ❓ 常见问题
 
-## 扩展与优化方向
+<details>
+<summary><b>图片上传失败</b></summary>
+- 确保uploads目录具有正确的写入权限
+- 检查配置的上传文件大小限制
+</details>
 
-- [ ] 集成支付功能
-- [ ] 添加用户评价系统
-- [ ] 开发移动端App
-- [ ] 引入消息推送功能
-- [ ] 实现商品推荐算法
-
-## 常见问题
-
-### 图片上传失败
-- 确保uploads目录有正确的写入权限
-- 检查配置的最大上传文件大小限制
-
-### 数据库连接错误
+<details>
+<summary><b>数据库连接错误</b></summary>
 - 验证数据库连接参数是否正确
 - 确认MySQL服务是否正常运行
+</details>
 
-## 贡献指南
-
-欢迎提交Pull Request或Issue来帮助改进这个项目！
+## 🤝 参与贡献
 
 1. Fork本仓库
-2. 创建您的特性分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交您的更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 开启一个Pull Request
+2. 创建特性分支 (`git checkout -b feature/AmazingFeature`)
+3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
+4. 推送分支 (`git push origin feature/AmazingFeature`)
+5. 提交Pull Request
 
+## 📞 联系方式
 
-## 联系方式
-
-项目维护者 - [Your Name](https://github.com/xy-lo)
-
+项目维护者 - [xy-lo](https://github.com/xy-lo)
