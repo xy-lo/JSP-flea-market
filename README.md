@@ -22,17 +22,17 @@
 ### 项目截图
 
 #### 登录界面
-![登录界面](./screenshots/login.png)
+![登录界面](./figures/login.png)
 
 #### 主界面
-![主界面](./screenshots/main.png)
+![主界面](./figures/main.png)
 
 #### 我的商品
-![我的商品](./screenshots/my_items.png)
+![我的商品](./figures/my_items.png)
 
 #### 商品详情
-![商品详情](./screenshots/item_detail1.png)
-![商品详情](./screenshots/item_detail2.png)
+![商品详情](./figures/item_detail1.png)
+![商品详情](./figures/item_detail2.png)
 ## 技术栈
 
 ### 前端
