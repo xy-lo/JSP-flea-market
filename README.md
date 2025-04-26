@@ -31,27 +31,18 @@
 ![我的商品](./figures/my_items.png)
 
 #### 商品详情
-![商品详情](./figures/item_detail1.png)
-![商品详情](./figures/item_detail2.png)
-## 技术栈
+![商品详情](./figures/item_detail.png)
 
-### 前端
-- HTML5 + CSS3 + JavaScript
-- jQuery
-- Bootstrap（响应式布局）
+## 系统运行环境
 
-### 后端
-- Java Servlet
-- JSP (JavaServer Pages)
-- JDBC (Java Database Connectivity)
-
-### 数据库
-- MySQL 5.7+
-
-### 开发与部署环境
-- JDK 8+
-- Tomcat 8+
-- XAMPP/WAMP/MAMP (本地开发)
+### 基本配置要求
+- 操作系统：Windows 7/10/11, macOS, Linux
+- 浏览器：Chrome, Firefox, Safari, Edge (推荐使用最新版本)
+- 网络连接：稳定的网络环境、
+### 服务器环境
+- 服务器容器：Apache Tomcat v9.0
+- 数据库：阿里云 RDS（MySQL 5.7+）
+- 脚本语言：MySQL 脚本语言（用于数据库操作）
 
 ## 快速开始
 
@@ -67,20 +58,9 @@
    git clone https://github.com/yourusername/second-hand-trading.git
    ```
 
-2. 导入项目到IDE中
-   - 对于IntelliJ IDEA：File -> Open -> 选择项目目录
-   - 对于Eclipse：File -> Import -> Existing Maven Projects -> 选择项目目录
-
-3. 导入数据库
-   ```sql
-   CREATE DATABASE second_hand_trading;
-   USE second_hand_trading;
-   SOURCE /path/to/project/database/init.sql;
-   ```
-
-4. 配置数据库连接
-   - 打开`src/main/resources/db.properties`
+2. 通过sqlBean重新连接数据库
    - 修改数据库连接参数（URL、用户名、密码）
+   - 配置所需数据表
 
 5. 部署到Tomcat
    - 配置Tomcat服务器
@@ -88,34 +68,37 @@
    - 启动Tomcat
 
 6. 访问应用
-   - 打开浏览器访问：`http://localhost:8080/second-hand-trading`
+   - 本机访问: http://localhost:8080/UPC_improve/login.jsp
+   - 其他访问: http://发布机器的ip地址:8080/UPC_improve/login.jsp
 
 ### 预设账户
-- 管理员：username: admin, password: admin123
-- 测试用户：username: testuser, password: test123
+- 管理员：username: 徐银, password: 123456
+- 测试用户：username: lujy, password: 123456
 
 ## 项目结构
 
 ```
-second-hand-trading/
+UPC_improve/
+├── .settings/
 ├── src/
-│   ├── main/
-│   │   ├── java/            # Java源代码
-│   │   │   ├── controller/  # Servlet控制器
-│   │   │   ├── dao/         # 数据访问对象
-│   │   │   ├── model/       # 数据模型
-│   │   │   ├── service/     # 业务逻辑
-│   │   │   └── util/        # 工具类
-│   │   ├── resources/       # 配置文件
-│   │   └── webapp/          # Web资源
-│   │       ├── css/         # 样式文件
-│   │       ├── js/          # JavaScript文件
-│   │       ├── images/      # 图片资源
-│   │       ├── uploads/     # 用户上传文件
-│   │       └── WEB-INF/     # JSP页面和配置
-├── database/                # 数据库脚本
-├── docs/                    # 项目文档
-└── README.md               # 项目说明
+│   └── MyBean/
+│       ├── conClass.java/   # 中文转换
+│       └── sqlBean.java/    # 数据库连接
+├── WebRoot/
+│   ├── images/
+│   │   ├── 自由女神.png/     # 背景
+│   │   └── logo.png/        # logo
+│   ├── WEB-INF/   
+│   ├── login.jsp/           # 登录界面
+│   ├── main.jsp/            # 主界面
+│   ├── itemdetail.jsp/      # 商品详情界面
+│   ├── infolr.jsp/          # 商品录入界面
+│   ├── infocx.jsp/          # 商品查询界面
+│   ├── mycollection.jsp/    # 我的收藏界面
+│   ├── myitems.jsp/         # 我的商品界面
+│   ├── error.jsp/           # 错误界面
+│   └── exit.jsp/            # 退出界面
+└── 网址说明文档.txt/                    # 项目文档
 ```
 
 ## 数据库设计
@@ -172,12 +155,8 @@ second-hand-trading/
 4. 推送到分支 (`git push origin feature/AmazingFeature`)
 5. 开启一个Pull Request
 
-## 许可证
-
-该项目采用MIT许可证 - 详情请见 [LICENSE](LICENSE) 文件
 
 ## 联系方式
 
-项目维护者 - [Your Name](https://github.com/yourusername)
+项目维护者 - [Your Name](https://github.com/xy-lo)
 
-项目链接：[https://github.com/yourusername/second-hand-trading](https://github.com/yourusername/second-hand-trading)
