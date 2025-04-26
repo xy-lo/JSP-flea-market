@@ -31,8 +31,8 @@
 ![我的商品](./screenshots/my_items.png)
 
 #### 商品详情
-![商品详情](./screenshots/item_detail.png)
-
+![商品详情](./screenshots/item_detail1.png)
+![商品详情](./screenshots/item_detail2.png)
 ## 技术栈
 
 ### 前端
